@@ -9,19 +9,27 @@ public class Employee {
 	private int noOfWorkingDays;
 	private int totalWage;
 	private static int empCheck;
+	private int maxHrs;
+	
+	private int totalWorkingHrs;
 
 	Employee() {
 		isFullTime = 2;
 		isPartTime = 1;
 		wagePerHour = 20;
 		noOfWorkingDays = 20;
+		maxHrs = 10;
 		empWage = 0;
 		empHrs = 0;
 		totalWage = 0;
+	
+		totalWorkingHrs = 0;
 	}
 
 	public void isPresent() {
-		for (int day = 0; day < noOfWorkingDays; day++) {
+		int totalWorkingDays = 0;
+		while(totalWorkingDays < noOfWorkingDays && totalWorkingHrs <= maxHrs ) {
+			totalWorkingDays++;
 			empCheck = (int) Math.floor(Math.random() * 10 % 3);
 			switch (empCheck) {
 			case 2: empHrs = 8;
@@ -32,6 +40,7 @@ public class Employee {
 
 			}
 			empWage = empHrs * wagePerHour;
+			totalWorkingHrs += empHrs;
 			totalWage += empWage;
 		}
 		System.out.println("Total Employee wage " + totalWage);
