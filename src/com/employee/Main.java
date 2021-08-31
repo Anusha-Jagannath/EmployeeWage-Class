@@ -7,5 +7,4 @@ public class Main {
 		Employee employee = new Employee();
 		employee.isPresent();
 	}
-
 }
