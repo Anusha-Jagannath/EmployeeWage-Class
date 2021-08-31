@@ -30,8 +30,9 @@ public class Employee {
 		default:
 			System.out.println("Employee is absent");
 		}
+		
 		empWage = empHrs * wagePerHour;
-		System.out.println("Employee wage " + empWage);
+		System.out.println("Employee wage is " + empWage);
 	}
 
 }
